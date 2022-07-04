@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<meta charset="UTF-8">
+<title>Login Page</title>
+<script>
+	function verify(){
+		var username=document.getElementById("uname").value;
+		var password=document.getElementById("pass").value;
+		console.log(username);
+		if (username=='admin') {
+			if(password=='1234'){
+				alert("registered user");
+			window.location="http://localhost:8080/Loginpageiss/Homepage.html";
+			return false;
+			}
+			else 
+			{
+			  alert("Wrong credentials");
+			  return false;
+			}
+		}
+		else{
+			//new user
+			alert("New user");
+			window.location="http://localhost:8080/Loginpageiss/Register.html";
+			return false;
+		}
+	}
+</script>
+</head>
+<body>
+<div class="container ">
+		<div class="row d-flex justify-content-center align-items-center" style="min-height:100vh; ">
+		<div class="col-md-4">
+		<div class="card d-flex align-items-center">
+<form onsubmit="return verify(this)" action="" method="post">
+	<h3 style="padding-left:60px;">Login</h3>
+	<hr/>
+	User Name:<br/><input class="mt-2 mb-3" id="uname" type="text" placeholder="Username" name="Username" required/><br/>
+	Password:<br/><input class="mt-2 mb-3" id="pass" type="password" placeholder="Username" name="Password" required/><br/>
+	<button type="submit" class="btn btn-success mb-3">Submit</button>
+</form>
+	</div>
+		</div>
+		</div>
+	</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
